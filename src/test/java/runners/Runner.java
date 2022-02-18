@@ -18,7 +18,7 @@ import org.junit.runner.RunWith;
 
         features = "C:\\Users\\Casper\\IdeaProjects\\cucumberproject\\src\\test\\resources\\features",
         glue = "stepdefinitions",
-        tags = "@login_user_correct",
+        tags = "@verify_subscription_in_homepage",
         dryRun = false
 )
 

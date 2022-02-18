@@ -1,5 +1,6 @@
 package stepdefinitions;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
@@ -45,8 +46,8 @@ public class RegisterUserStepDefs {
     @When("user enters name and email")
     public void user_enters_name_and_email() {
 
-        mainPageFunctionalities.nameBox.sendKeys("Ozkan");
-        mainPageFunctionalities.emailBox.sendKeys("ozkan@gmail.com");
+        mainPageFunctionalities.nameBox.sendKeys("john");
+        mainPageFunctionalities.emailBox.sendKeys("john@gmail.com");
 
     }
 
@@ -54,10 +55,18 @@ public class RegisterUserStepDefs {
     public void user_clicks_signup_button() {
         mainPageFunctionalities.accountCreatSignupButton.click();
     }
+
     @When("user verifies that enter account information is visible")
     public void user_verifies_that_enter_account_information_is_visible() {
 
         Assert.assertTrue(mainPageFunctionalities.createAccountPageVerification.isDisplayed());
     }
 
+
+    @And("user verifies email address is visible is displayed")
+    public void userVerifiesEmailAddressIsVisibleIsDisplayed() {
+
+        Assert.assertTrue(mainPageFunctionalities.existingEmailVerification.isDisplayed());
+
+    }
 }

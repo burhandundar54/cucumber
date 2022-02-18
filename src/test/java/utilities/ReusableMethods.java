@@ -168,4 +168,12 @@ public class ReusableMethods {
         select.selectByIndex(optionIndex);
         return select.getFirstSelectedOption();
     }
+
+    public static void jsScroll() {
+
+        JavascriptExecutor je = (JavascriptExecutor) Driver.getDriver();
+        je.executeScript("window.scrollTo(0,document.body.scrollHeight)");
+
+    }
+
 }

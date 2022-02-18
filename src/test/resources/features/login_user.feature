@@ -7,6 +7,7 @@ Feature: Login_user_correct
     And user clicks signup_login button
     And user verifies login to your account is visible
     And user enters correct email_address and password
+
       |email_address  |password|
       |ozkan@gmail.com|123456|
     And user clicks login box

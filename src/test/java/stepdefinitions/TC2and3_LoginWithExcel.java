@@ -19,8 +19,8 @@ public class TC2and3_LoginWithExcel {
     @When("user enters correct email_address and password via excel")
     public void user_enters_correct_email_address_and_password_via_excel() {
 
-        String path="C:\\Users\\Casper\\IdeaProjects\\cucumberproject\\src\\test\\resources\\testdata\\Book1.xlsx";
-        String sheetName= "Sheet1";
+        String path="./src/test/resources/testdata/Book1.xlsx";
+        String sheetName= "Sayfa1";
         excelUtil=new ExcelUtil(path,sheetName);
         loginData=excelUtil.getDataList();
 
@@ -32,8 +32,8 @@ public class TC2and3_LoginWithExcel {
     @And("user enters wrong email_address and password via excel")
     public void userEntersWrongEmail_addressAndPasswordViaExcel() {
 
-        String path="C:\\Users\\Casper\\IdeaProjects\\cucumberproject\\src\\test\\resources\\testdata\\Book1.xlsx";
-        String sheetName= "Sheet1";
+        String path="./src/test/resources/testdata/Book1.xlsx";
+        String sheetName= "Sayfa1";
         excelUtil=new ExcelUtil(path,sheetName);
         loginData=excelUtil.getDataList();
 
