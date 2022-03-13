@@ -5,9 +5,9 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
-public class SignInPage {
+public class US09_SignInPage {
 
-    public SignInPage() {
+    public US09_SignInPage() {
         PageFactory.initElements(Driver.getDriver(),this);
 
     }
@@ -54,19 +54,28 @@ public class SignInPage {
 
 
 
-    @FindBy(xpath = "//*[text()='Back']")
+    @FindBy(xpath = "(//*[text()='Edit'])[1]")
     public WebElement Editbutton;
 
-    @FindBy(xpath = "//*[text()='Back']")
-    public WebElement CreateOrEditText;
+    @FindBy(xpath = "//*[text()='Create or edit a Patient']")
+    public WebElement CreateOrEditPatiencePage;
 
-    @FindBy(xpath = "//*[text()='Back']")
+    @FindBy(xpath = "//*[@id='patient-firstName']")
+    public WebElement PatientNameBox;
+
+    @FindBy(xpath = "//*[text()='Save']")
     public WebElement Savebutton;
 
 
+    @FindBy(xpath = "//*[@id=\"root\"]/div/div/div[1]/div")
+    public WebElement PupupforSave;
 
 
+    @FindBy(xpath = "//*[@name='ssn']")
+    public WebElement ssnSearchBox;
 
+    @FindBy(xpath = "//*[@id=\"app-view-container\"]/div/div/div/div/h2/b")
+    public WebElement PatientId;
 
 
 }

@@ -21,5 +21,7 @@ Feature: Login_user_correct
 
     When user clicks Edit button
     Then verify This Page Create or Edit Patient
-    And user updates all Patient information
+    And user can update all Patient information
     Then user clicks Save button
+    Then user verify that edition is saved
+

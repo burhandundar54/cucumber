@@ -4,15 +4,15 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
-import pages.SignInPage;
+import pages.US09_SignInPage;
 import utilities.ConfigurationReader;
 import utilities.Driver;
 
-public class TC9_LoginStepDef {
+public class US09_LoginStepDef {
 
 
 
-    SignInPage signInPage=new SignInPage();
+    US09_SignInPage signInPage=new US09_SignInPage();
 
     @When("user launches the browser")
     public void userLaunchesTheBrowser() {
@@ -22,7 +22,7 @@ public class TC9_LoginStepDef {
     @And("user navigates to home page")
     public void userNavigatesToHomePage() {
 
-        Driver.getDriver().navigate().to(ConfigurationReader.getProperty("login_url"));
+        Driver.getDriver().navigate().to(ConfigurationReader.getProperty("base_url"));
 
     }
 
@@ -109,23 +109,43 @@ public class TC9_LoginStepDef {
     @And("user clicks Back Button")
     public void userClicksBackButton() {
         Driver.clickWithJS(signInPage.Backbutton);
+        Driver.wait(2);
 
 
     }
 
     @When("user clicks Edit button")
     public void userClicksEditButton() {
+        Driver.clickWithJS(signInPage.Editbutton);
+
     }
 
     @Then("verify This Page Create or Edit Patient")
     public void verifyThisPageCreateOrEditPatient() {
-    }
+        Assert.assertTrue(signInPage.CreateOrEditPatiencePage.isDisplayed());
+        }
 
-    @And("user updates all Patient information")
-    public void userUpdatesAllPatientInformation() {
+    @And("user can update all Patient information")
+    public void userCanUpdateAllPatientInformation() {
+        Driver.wait(2);
+        signInPage.PatientNameBox.clear();
+        Driver.wait(2);
+        signInPage.PatientNameBox.sendKeys("burhan");
+
     }
 
     @Then("user clicks Save button")
     public void userClicksSaveButton() {
+        Driver.wait(2);
+        Driver.clickWithJS(signInPage.Savebutton);
     }
+
+    @Then("user verify that edition is saved")
+    public void userVerifyThatEditionIsSaved() {
+        Driver.wait(2);
+        Assert.assertTrue(signInPage.PupupforSave.isDisplayed());
+    }
+
+
+
 }
